@@ -1,2 +1,2 @@
 # rewards-fe
-Rewards System front-end SPA
+Rewards System front-end
