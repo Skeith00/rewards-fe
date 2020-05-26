@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Rewards System User View</title>
+		<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="keywords" content="Rewards System User View">
+		<!-- //Meta-Tags -->
+		<script src="./includes/common-libs.js"></script>
+		<script src="./vendors/js/jquery.qrcode.min.js"></script>
+		<script src="./resources/js/users.js"></script>
+		<script>
+			$(document).ready(function() {
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				if(urlParams.has('id')) {
+					var id = urlParams.get('id');
+					getUser(id, handleUser);
+				} else {
+					window.location.replace("users");
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<!-- main content -->
+				<div class="agile_info">
+					<ul class="breadcrumb">
+						<li><a href="index">Index</a></li>
+						<li><a href="users">Users</a></li>
+						<li>User View</li>
+					</ul>
+					<div class="w3_info">
+						<h2>User View</h2>
+						<div class="alert" hidden>
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+							<span id="error-message"></span>
+						</div>
+						<div class="rcorners">
+							<p id="name"></p>
+							<p id="email"></p>
+							<p id="phone"></p>
+							<p id="points"></p>
+							<a id="historic" class="vertical" href="historic" target="_blank"
+								onclick="window.open(this.href, 'historic','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); 
+								return false;"> Historic </a>
+						</div>
+						<div id="qrcode"></div>
+					</div>
+				</div>
+				<!-- //main content -->
+			</div>
+		</div>
+	</body>
+</html>

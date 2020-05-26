@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>Historic</title>
+		<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="keywords" content="Rewards System Historic">
+		<!-- //Meta-Tags -->
+		<script type="text/javascript" src="./includes/common-libs.js"></script>
+		<script src="./resources/js/users.js"></script>
+		<script>
+			$(document).ready(function() {
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				if(urlParams.has('id')) {
+					var id = urlParams.get('id');
+					getHistoric(id)
+				} else {
+					window.location.replace("users");
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<table>
+			<thead>
+			<tr>
+				<th scope="col"></th>
+				<th scope="col">Points</th>
+				<th scope="col">Date</th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>  
+	</body>
+</html>

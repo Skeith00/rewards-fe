@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Rewards System User Edit</title>
+		<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="keywords" content="Rewards System User View">
+		<!-- //Meta-Tags -->		
+		<script src="./includes/common-libs.js"></script>
+		<script src="./resources/js/users.js"></script>
+		<script>
+			$(document).ready(function() {
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				if(urlParams.has('id')) {
+					var id = urlParams.get('id');
+					getUser(id, loadUser);
+				} else {
+					window.location.replace("users");
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<!-- main content -->
+				<div class="agile_info">
+					<ul class="breadcrumb">
+						<li><a href="index">Index</a></li>
+						<li><a href="users">Users</a></li>
+						<li>User Edit</li>
+					</ul>
+					<div class="w3_info">
+						<h2>User Edit</h2>
+						<div class="alert" hidden>
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+							<span id="error-message"></span>
+						</div>
+						<form>
+							<label>Name</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="text" id="name" placeholder="Name" required>
+							</div>
+							<label>LastName</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="text" id="lastname" placeholder="Last Name" required>
+							</div>
+							<label>Phone</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="text" id="phone" placeholder="Phone" required>
+							</div>
+							<div class="button">
+								<input type="hidden" id="buyerid" value="" required>
+								<button class="btn btn-danger btn-block" type="button" onclick="editUser()">Save</button >                
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- //main content -->
+			</div>
+		</div>
+	</body>
+</html>

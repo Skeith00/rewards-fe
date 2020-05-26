@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Rewards System Add Deal</title>
+		<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="keywords" content="Rewards System User View">
+		<!-- //Meta-Tags -->		
+		<script type="text/javascript" src="./includes/common-libs.js"></script>
+		<script src="./resources/js/deals.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script>
+			$(document).ready(function() {
+				$("#expiry").datepicker();
+			});
+		</script>
+
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<!-- main content -->
+				<div class="agile_info">
+					<ul class="breadcrumb">
+						<li><a href="index">Index</a></li>
+						<li><a href="deals">Deals</a></li>
+						<li>Add Deal</li>
+					</ul>
+					<div class="w3_info">
+						<h2>Add Deal</h2>
+						<div class="alert" hidden>
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+							<span id="error-message"></span>
+						</div>
+						<form>
+							<label>Name</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="text" id="name" placeholder="Name" required>
+							</div>
+							<label>Description</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="text" id="description" placeholder="Description" required>
+							</div>
+							<label>Points</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="number" min="1" step="1" id="points" placeholder="Points" required>
+							</div>
+							<label>Expiry Date</label>
+							<div class="input-group">
+								<span class="fa fa-calendar" aria-hidden="true"></span>
+								<input type="text" id="expiry" placeholder="Expiry Date" required>
+							</div>
+							<div class="button">
+								<button class="btn btn-danger btn-block" type="button" onclick="addDeal()">Sign Up</button >                
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- //main content -->
+			</div>
+		</div>
+	</body>
+</html>

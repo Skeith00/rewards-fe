@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Rewards System Payment</title>
+		<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="keywords" content="Rewards System User View">
+		<!-- //Meta-Tags -->		
+		<script type="text/javascript" src="./includes/common-libs.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+		<script src="./resources/js/payment.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<!-- main content -->
+				<div class="agile_info">
+					<ul class="breadcrumb">
+						<li><a href="index">Index</a></li>
+						<li>Payment</li>
+					</ul>
+					<div class="w3_info">
+						<h2>Payment</h2>
+						<div class="alert" hidden>
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+							<span id="error-message"></span>
+						</div>
+						<br>
+						<label>Camera</label>
+						<div class="input-group" id="cameras">
+							<span aria-hidden="true"></span>
+							<select id="camera">
+							</select>
+							<button type="button" onclick="selectCamera()">Use camera</button >                
+						</div>
+						<video
+							id="video"
+							width="300"
+							height="200"
+							style="border: 1px solid gray" hidden>
+						</video>
+					  	<form>
+							<label>Name</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="text" id="name" disabled>
+								<input type="hidden" id="buyerid" value="" required>
+							</div>
+							<label>Bill in €</label>
+							<div class="input-group">
+								<span aria-hidden="true"></span>
+								<input type="number" min="1" step="1" id="price" placeholder="price" required/>
+							</div>
+							<label>Deal used</label>
+							<div class="input-group" id="dealused">
+								<span aria-hidden="true"></span>
+								<select id="deals">
+									<option value="0">None</option>
+								</select>
+							</div>
+							<div class="button">
+								<button class="btn btn-danger btn-block" type="button" onclick="pay()">Send</button >                
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- //main content -->
+			</div>
+		</div>
+	</body>
+</html>

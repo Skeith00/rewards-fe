@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Rewards System Users</title>
+		<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="keywords" content="Rewards System Users List">
+		<!-- //Meta-Tags -->		
+		<script type="text/javascript" src="./includes/common-libs.js"></script>
+		<script src="./resources/js/users.js"></script>
+		<script>
+			$(document).ready(function() {
+				getUsers();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<!-- main content -->
+				<div class="agile_info">
+					<ul class="breadcrumb">
+						<li><a href="index">Index</a></li>
+						<li>Users</li>
+					</ul>
+					<div class="w3_info">
+						<h2>Users Page</h2>
+						<div class="alert" hidden>
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+							<span id="error-message"></span>
+						</div>
+						<div>
+							<table>
+								<thead>
+								  <tr>
+									<th scope="col">Email</th>
+									<th scope="col">Name</th>
+									<th scope="col">Action</th>
+								  </tr>
+								</thead>
+								<tbody>
+								</tbody>
+							  </table>  
+						</div>
+					</div>
+				</div>
+				<!-- //main content -->
+			</div>
+		</div>
+	</body>
+</html>
