@@ -1,4 +1,5 @@
 const reqUrl = "http://localhost:8000"; 
+validateToken()
 
 function login() {
     console.log("Loging in...");
@@ -87,8 +88,13 @@ function getErrorMessage(xhr) {
     }
 }
 
-function redirectLogin(milisecs) {
-    setTimeout(function () {
-        window.location.href = "login"; //will redirect to loginPage
-     }, milisecs);                      //will call the function after X milisecs.
+function validateToken() {
+    if(localStorage.getItem('token') == null && window.location.pathname != '/login') {
+        window.location.replace('login');
+    }
+}
+
+function logOut() {
+    window.localStorage.removeItem('token');
+    window.location.replace('login');
 }
